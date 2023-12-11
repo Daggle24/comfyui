@@ -4,6 +4,20 @@
 
 NODES=(
     #"https://github.com/ltdrdata/ComfyUI-Manager"
+    #"https://github.com/Daggle24/rembg-comfyui-node"
+    #"https://github.com/Daggle24/SDXLCustomAspectRatio.git"
+    #"https://github.com/cubiq/ComfyUI_IPAdapter_plus"
+    #"https://github.com/RockOfFire/ComfyUI_Comfyroll_CustomNodes"
+    #"https://github.com/ltdrdata/ComfyUI-Inspire-Pack"
+    #"https://github.com/BadCafeCode/masquerade-nodes-comfyui"
+    #"https://github.com/flyingshutter/As_ComfyUI_CustomNodes"
+    #"https://github.com/omar92/ComfyUI-QualityOfLifeSuit_Omar92"
+    #"https://github.com/WASasquatch/was-node-suite-comfyui"
+    #"https://github.com/pythongosssss/ComfyUI-WD14-Tagger"
+    #"https://github.com/jags111/efficiency-nodes-comfyui"
+    #"https://github.com/Ttl/ComfyUi_NNLatentUpscale"
+    #"https://github.com/Fannovel16/comfyui_controlnet_aux"
+
 )
 
 CHECKPOINT_MODELS=(
