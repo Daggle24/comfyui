@@ -7,9 +7,9 @@ services:
       args:
         IMAGE_BASE: ${IMAGE_BASE:-ghcr.io/ai-dock/jupyter-pytorch:2.1.1-py3.10-cuda-12.1.0-base-22.04}
       tags:
-        - "ghcr.io/ai-dock/comfyui:${IMAGE_TAG:-latest-jupyter}"
+        - "daggle24/deliria:${IMAGE_TAG:-latest}"
         
-    image: ghcr.io/ai-dock/comfyui:${IMAGE_TAG:-latest-jupyter}
+    image: daggle24/deliria:${IMAGE_TAG:-latest}
     
     ## For Nvidia GPU's - You probably want to uncomment this
     deploy:
@@ -75,7 +75,7 @@ services:
         - WORKSPACE=${WORKSPACE:-/workspace}
         - WORKSPACE_SYNC=${WORKSPACE_SYNC:-false}
         - CF_TUNNEL_TOKEN=${CF_TUNNEL_TOKEN:-}
-        - CF_QUICK_TUNNELS=${CF_QUICK_TUNNELS:-true}
+        - CF_QUICK_TUNNELS=${CF_QUICK_TUNNELS:-false}
         - WEB_ENABLE_AUTH=${WEB_ENABLE_AUTH:-true}
         - WEB_USER=${WEB_USER:-user}
         - WEB_PASSWORD=${WEB_PASSWORD:-password}

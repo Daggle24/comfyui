@@ -3,20 +3,22 @@
 # Use this layer to add nodes and models
 
 NODES=(
-    #"https://github.com/ltdrdata/ComfyUI-Manager"
-    #"https://github.com/Daggle24/rembg-comfyui-node"
-    #"https://github.com/Daggle24/SDXLCustomAspectRatio.git"
-    #"https://github.com/cubiq/ComfyUI_IPAdapter_plus"
-    #"https://github.com/RockOfFire/ComfyUI_Comfyroll_CustomNodes"
-    #"https://github.com/ltdrdata/ComfyUI-Inspire-Pack"
-    #"https://github.com/BadCafeCode/masquerade-nodes-comfyui"
-    #"https://github.com/flyingshutter/As_ComfyUI_CustomNodes"
-    #"https://github.com/omar92/ComfyUI-QualityOfLifeSuit_Omar92"
-    #"https://github.com/WASasquatch/was-node-suite-comfyui"
-    #"https://github.com/pythongosssss/ComfyUI-WD14-Tagger"
-    #"https://github.com/jags111/efficiency-nodes-comfyui"
-    #"https://github.com/Ttl/ComfyUi_NNLatentUpscale"
-    #"https://github.com/Fannovel16/comfyui_controlnet_aux"
+    "https://github.com/ltdrdata/ComfyUI-Manager"
+    "https://github.com/Daggle24/rembg-comfyui-node"
+    "https://github.com/Daggle24/SDXLCustomAspectRatio"
+    "https://github.com/cubiq/ComfyUI_IPAdapter_plus"
+    "https://github.com/RockOfFire/ComfyUI_Comfyroll_CustomNodes"
+    "https://github.com/ltdrdata/ComfyUI-Inspire-Pack"
+    "https://github.com/BadCafeCode/masquerade-nodes-comfyui"
+    "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
+    "https://github.com/flyingshutter/As_ComfyUI_CustomNodes"
+    "https://github.com/pythongosssss/ComfyUI-Custom-Scripts"
+    "https://github.com/omar92/ComfyUI-QualityOfLifeSuit_Omar92"
+    "https://github.com/WASasquatch/was-node-suite-comfyui"
+    "https://github.com/pythongosssss/ComfyUI-WD14-Tagger"
+    "https://github.com/jags111/efficiency-nodes-comfyui"
+    "https://github.com/Ttl/ComfyUi_NNLatentUpscale"
+    "https://github.com/Fannovel16/comfyui_controlnet_aux"
 
 )
 
@@ -41,6 +43,11 @@ ESRGAN_MODELS=(
     #"https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x4.pth"
     #"https://huggingface.co/FacehugmanIII/4x_foolhardy_Remacri/resolve/main/4x_foolhardy_Remacri.pth"
     #"https://huggingface.co/Akumetsu971/SD_Anime_Futuristic_Armor/resolve/main/4x_NMKD-Siax_200k.pth"
+)
+
+REMBG_MODELS=(
+    "https://huggingface.co/Daggle/latest_test.pth/blob/main/latest_test.pth"
+
 )
 
 CONTROLNET_MODELS=(
@@ -82,6 +89,13 @@ function build_extra_start() {
     build_extra_get_models \
         "/opt/storage/stable_diffusion/models/esrgan" \
         "${ESRGAN_MODELS[@]}"
+    build_extra_get_models \
+        "/opt/storage/stable_diffusion/models/rembg" \
+        "${REMBG_MODELS[@]}"
+    build_extra_get_models \
+        "/opt/storage/stable_diffusion/models/clip_vision"
+    build_extra_get_models \
+        "/opt/storage/stable_diffusion/models/ip_adapter"
 }
 
 function build_extra_get_nodes() {
