@@ -96,6 +96,17 @@ function build_extra_start() {
         "/opt/storage/stable_diffusion/models/clip_vision"
     build_extra_get_models \
         "/opt/storage/stable_diffusion/models/ip_adapter"
+     
+    cd /opt/ComfyUI && \
+    micromamba run -n comfyui -e LD_PRELOAD=libtcmalloc.so python main.py \
+        --cpu \
+        --listen 127.0.0.1 \
+        --port 11404 \
+        --disable-auto-launch \
+        --quick-test-for-ci
+    
+    # Ensure pytorch hasn't been clobbered
+    $MAMBA_DEFAULT_RUN python /opt/ai-dock/tests/assert-torch-version.py
 }
 
 function build_extra_get_nodes() {
@@ -113,7 +124,7 @@ function build_extra_get_nodes() {
             fi
         else
             printf "Downloading node: %s...\n" "${repo}"
-            git clone "${repo}" "${path}"
+            git clone "${repo}" "${path}" --recursive
             if [[ -e $requirements ]]; then
                 micromamba -n comfyui run ${PIP_INSTALL} -r "${requirements}"
             fi
